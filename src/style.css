@@ -1,0 +1,73 @@
+@font-face {
+    font-family: "opificio_light_rounded";
+    src:  url("./fonts/opificio_light_rounded.ttf") format("truetype");
+  }
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    background-color: #6032a8;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-family: 'opificio_light_rounded';
+    color: #ffff;
+    margin-left: 20px;
+}
+
+.search {
+    margin-top: 5px;
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    color: #ffff;
+    background-color: #5032a8;
+}
+
+.main {
+    display: flex;
+}
+
+.sidebar {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ededed;
+    width: 200px;
+    max-width: 300px;
+    height: 81vh;
+    gap: 70px;
+}
+
+.list {
+    cursor: pointer;
+    border: none;
+    background-color: #ededed;
+    transition: 0.5s;
+    font-size: 20px;
+}
+
+.list:hover{
+    opacity: 1;
+    background-color: #d4d4d4;
+}
+
+.things {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+small {
+    font-weight: normal;
+    font-size: 15px;
+    font-style: oblique;
+}
