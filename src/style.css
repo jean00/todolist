@@ -6,8 +6,8 @@
 body {
     height: 100%;
     margin: 0;
+    width: 100%;
 }
-
 .header {
     display: flex;
     background-color: #6032a8;
@@ -32,27 +32,24 @@ body {
     background-color: #5032a8;
 }
 
-.main {
-    display: flex;
-}
-
 .sidebar {
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
+    padding-top: 30px;
+    padding-right: 40px;
     background-color: #ededed;
-    width: 200px;
+    width: 250px;
     max-width: 300px;
-    height: 81vh;
-    gap: 70px;
+    height: 86vh;
+    float: left;
 }
-
+ul {
+    list-style-type: none;
+}
 .list {
     cursor: pointer;
-    border: none;
     background-color: #ededed;
     transition: 0.5s;
     font-size: 20px;
+    padding: 20px;
 }
 
 .list:hover{
@@ -60,14 +57,15 @@ body {
     background-color: #d4d4d4;
 }
 
-.things {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-}
-
-small {
+.today {
     font-weight: normal;
     font-size: 15px;
-    font-style: oblique;
+    font-style: oblique;   
+    color: #808080; 
+}
+
+.things {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
