@@ -13,7 +13,7 @@
                     <h1>To do list </h1>
                 </div>
                 <div class = "searchdiv">
-                    <input class = "search "autocomplete = "off" type = "text" placeholder =" Search">
+                    <input class = "search" autocomplete = "off" type = "text" placeholder =" Search">
                 </div>
             </header>
             <main class = "main">
@@ -55,12 +55,26 @@
                             <small class = "today"></small>
                         </h1>
                     </div>
-                    <div class = "b1">
-                        <button class = "add">
-                            <i class="fas fa-plus"></i>
-                        </button>
+                    <div class = "event">
+                        <div class = "b1">
+                            <button class = "add"> + </button>
+                            <span class = "text"> Add task </span>
+                        </div>
                     </div>
                 </section>
+                <div class = "popup">
+                    <div class = "popup-content">
+                        <div class = "close">
+                            <i class="far fa-times-circle"></i>
+                        </div>
+                        <form action = "">
+                            <textarea class = "title" placeholder="title"></textarea>
+                            <textarea class = "notes" placeholder="notes"></textarea>
+                            <input class = "dateInput" type="date">
+                            <input class = "submit" type = "button" value = "add task"> 
+                        </form>
+                    </div>    
+                </div>
             </main>
         </div>
     </body>
