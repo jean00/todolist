@@ -69,3 +69,110 @@ ul {
     flex-direction: column;
     align-items: center;
 }
+
+.add {
+    border-radius: 100%;
+    border: none;
+}
+
+.b1 {
+    cursor: pointer;
+    vertical-align: middle;
+    width: 900px;
+    font-size: 20px;
+}
+
+.text {
+    width: 900px;
+}
+
+.popup {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.popup-content {
+    width: 500px;
+    height: 420px;
+    background-color: #6032a8;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20%;
+}
+
+.title {
+    margin-top: 40px;
+    height: 30px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 25px;
+}
+.notes {
+    height: 150px;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+textarea {
+    resize: none;
+    border-radius:20px;
+    border: none;
+    background-color: #5032a8;
+    width: 90%;
+    margin: 10px; 
+    color: #ffff;
+}
+
+.dateInput {
+    margin: auto;
+    border-radius:20px;
+    border: none;
+    background-color: #5032a1;
+    color: #ffff;
+    display: block;
+    height: 30px;
+    width: 120px;
+}
+
+textarea:hover,
+.dateInput:hover {
+    background-color: black ;
+    opacity: 0.5;
+}
+
+textarea:focus {
+    background-color: black ;
+    opacity: 0.5;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.submit {
+    margin-top: 30px;
+    height: 50px;
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: none;
+    background-color: #5032a8;
+    font-weight: bolder;
+}
+
+.submit:hover {
+    opacity: 0.4;
+}
