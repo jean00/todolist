@@ -175,4 +175,5 @@ textarea:focus {
 
 .submit:hover {
     opacity: 0.4;
+    color: white;
 }
