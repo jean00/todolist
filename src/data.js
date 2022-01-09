@@ -64,9 +64,9 @@ const notes = () => {
         maindiv.parentNode.removeChild(maindiv);
 
         console.log(collection, i)
-    }
+    };
 
-    return { getInput, removeNote}
+    return { getInput }
 }
 const userInput = notes();
 export { userInput }
