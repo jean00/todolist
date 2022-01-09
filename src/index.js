@@ -22,5 +22,6 @@ document.querySelector('.close').addEventListener('click', () => {
 })
 
 document.querySelector('.submit').addEventListener('click', () => {
+    document.querySelector('.popup').style.display = 'none';
     userInput.getInput();
 })

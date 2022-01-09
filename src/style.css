@@ -177,3 +177,45 @@ textarea:focus {
     opacity: 0.4;
     color: white;
 }
+.topdiv {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15%;
+    margin-bottom: 15px;
+}
+
+.maindiv {
+    max-width: 900px;
+    word-wrap: break-word;
+    margin-bottom: 30px;
+}
+
+.divtitle {
+    font-size: 25px;
+    font-weight: bolder
+}
+
+.divdate {
+    padding-top: 5px;
+    font-size: 20px;
+}
+
+.div {
+    display: flex;
+    gap: 20px;
+    padding-top: 10px;
+    opacity: 0;
+}
+
+.modify:hover {
+    color: red;
+}
+
+.remove:hover {
+    color: red;
+}
+
+.maindiv:hover .div {
+    opacity: 1;
+    cursor: pointer;
+}
