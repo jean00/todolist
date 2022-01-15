@@ -1,3 +1,5 @@
+'use strict';
+
 const notes = () => {
     let collection = [];
     let i = 0;
@@ -33,7 +35,7 @@ const notes = () => {
         divdate.className = 'divdate';
         div.className = 'div';
         divsetting.className = 'modify';
-        divremove.className = 'remove'
+        divremove.className = 'remove';
 
         divtitle.textContent = obj.title;
         divdate.textContent = obj.date;
@@ -55,8 +57,10 @@ const notes = () => {
         divremove.addEventListener('click', () => {
             removeNote(datavalue, maindiv);
         });
-
         
+        divsetting.addEventListener('click', () => {
+            modifynote(obj, topdiv, divnotes)
+        })
     };
 
     const removeNote = (datavalue, maindiv) => {
@@ -65,6 +69,61 @@ const notes = () => {
 
         console.log(collection, i)
     };
+
+    const modifynote = (obj, topdiv, divnotes) => {
+        const main = document.querySelector('.main');
+        const container = document.createElement('div');
+        const maindiv = document.createElement('div');
+        const closediv = document.createElement('div');
+        const form = document.createElement('form');
+        const titleta = document.createElement('textarea');
+        const notesta = document.createElement('textarea');
+        const date = document.createElement('input')
+        const button = document.createElement('input')
+
+        container.className = 'modifypopup';
+        maindiv.className = 'modifypopup-content';
+        closediv.className = 'close2';
+        titleta.className = 'newTitle';
+        notesta.className = 'newNotes';
+        date.className = 'dateInput';
+        button.className = 'submit2';
+
+        titleta.placeholder = "title";
+        notesta.placeholder = "notes";
+        date.type = 'date';
+        button.type = 'button';
+
+        form.appendChild(titleta);
+        form.appendChild(notesta);
+        form.appendChild(date);
+        form.appendChild(button);
+        maindiv.appendChild(form);
+        maindiv.appendChild(closediv);
+        container.appendChild(maindiv);
+        main.appendChild(container);
+
+        button.addEventListener('click', () => {
+            console.log('ciao')
+            container.style.display = 'none'
+            const array2 = topdiv.childNodes;
+            console.log(array2)
+            if(titleta.value !== "")
+            {
+                obj.title = titleta.value;
+                console.log(titleta.value);
+                array2[0].textContent = titleta.value;
+                console.log(obj)
+            }
+
+            if(notesta !== "")
+            {
+                obj.descriptionx = notesta.value;
+                console.log(notesta.value);
+                divnotes.textContent = notesta.value;
+            }
+        })
+    }
 
     return { getInput }
 }
