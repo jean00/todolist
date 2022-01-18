@@ -6,7 +6,7 @@ import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
 
 import { format } from 'date-fns';
-import { userInput } from '../src/data.js';
+import { note } from '../src/function.js';
 
 const today = new Date();
 const formattedDate = format(today, 'dd/MM/yyyy');
@@ -25,5 +25,5 @@ document.querySelector('.close').addEventListener('click', () => {
 
 document.querySelector('.submit').addEventListener('click', () => {
     document.querySelector('.popup').style.display = 'none';
-    userInput.getInput();
+    note.getInput();
 })

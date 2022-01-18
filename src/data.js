@@ -1,20 +1,7 @@
 'use strict';
+import { note } from '../src/function.js';
 
 const notes = () => {
-    let collection = [];
-    let i = 0;
-
-    const getInput = () => {
-        let obj = {
-            title: document.querySelector('.title').value,
-            description: document.querySelector('.notes').value,
-            date: document.querySelector('.dateInput').value.toString(),
-        }
-        collection.push(obj);
-        console.log(collection, obj);
-        HTMLelement(obj, i);
-        i = i + 1;
-    };
 
     const HTMLelement = (obj, i) => {
         const parentdiv = document.querySelector('.todos');
@@ -64,10 +51,8 @@ const notes = () => {
     };
 
     const removeNote = (datavalue, maindiv) => {
-        collection.splice(collection.indexOf(datavalue), 1);
         maindiv.parentNode.removeChild(maindiv);
-
-        console.log(collection, i)
+        note.removeEl(datavalue);
     };
 
     const modifynote = (obj, topdiv, divnotes) => {
@@ -104,29 +89,14 @@ const notes = () => {
         main.appendChild(container);
 
         button.addEventListener('click', () => {
-            console.log('ciao')
             container.style.display = 'none'
             const array2 = topdiv.childNodes;
-            console.log(array2)
-            if(titleta.value !== "")
-            {
-                obj.title = titleta.value;
-                console.log(titleta.value);
-                array2[0].textContent = titleta.value;
-                console.log(obj)
-            }
-
-            if(notesta !== "")
-            {
-                obj.descriptionx = notesta.value;
-                console.log(notesta.value);
-                divnotes.textContent = notesta.value;
-            }
+            note.modify(obj, array2, notesta, titleta, divnotes)
         })
     }
 
-    return { getInput }
+    return { HTMLelement }
 }
-const userInput = notes();
-export { userInput }
+const ui = notes();
+export { ui }
 
