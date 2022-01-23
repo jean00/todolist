@@ -1,95 +1,80 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title> Todo List</title>
-        <script src = "main.js" defer></script>
-        <link rel = "stylesheet" href = "../src/style.css">
-    </head>
-    <body>
-        <div class = "content">
-            <header class = "header">
-                <div class = "logo"> 
-                    <h1>To do list </h1>
-                </div>
-                <div class = "searchdiv">
-                    <input class = "search" autocomplete = "off" type = "text" placeholder =" Search">
-                </div>
-            </header>
-            <main class = "main">
-                <aside class = "sidebar">
-                    <nav>
-                        <ul>
-                            <li class = "list">
-                                <span>
-                                    <i class="fas fa-inbox"></i>
-                                </span>
-                                <span>
-                                &nbsp;Inbox
-                                </span>
-                                
-                            </li>
-                            <li class = "list">
-                                <span>
-                                    <i class="fas fa-calendar-day"></i>
-                                </span>
-                                <span>
-                                &nbsp;Today 
-                                </span>
-                            </li>
-                            <li class = "list">
-                                <span>
-                                    <i class="far fa-calendar-alt"></i>
-                                </span>
-                                <span>
-                                &nbsp;Upcoming 
-                                </span>
-                            </li>
-                        </ul>
-                    </nav>
-                </aside>
-                <section class = "things">
-                    <div class = "date"> 
-                        <h1> 
-                            <span> Today </span>
-                            <small class = "today"></small>
-                        </h1>
-                    </div>
-                    <div class = "event">
-                        <div class = "todos"></div>
-                        <div class = "b1">
-                            <button class = "add"> + </button>
-                            <span class = "text"> Add task </span>
-                        </div>
-                    </div>
-                </section>
-                <div class = "popup">
-                    <div class = "popup-content">
-                        <div class = "close">
-                            <i class="far fa-times-circle"></i>
-                        </div>
-                        <form action = "">
-                            <textarea  class = "title" placeholder="title"></textarea>
-                            <textarea class = "notes" placeholder="notes"></textarea>
-                            <input class = "dateInput" type="date">
-                            <input class = "submit" type = "button" value = "add task"> 
-                        </form>
-                    </div>    
-                </div>
-                <!--<div class = "modifypopup">
-                    <div class = "modifypopup-content">
-                        <div class = "close2">
-                            <i class="far fa-times-circle"></i>
-                        </div>
-                        <form action = "">
-                            <textarea  class = "newTitle" placeholder="title"></textarea>
-                            <textarea class = "newNotes" placeholder="notes"></textarea>
-                            <input class = "dateInput" type="date">
-                            <input class = "submit2" type = "button" value = "add task"> 
-                        </form>
-                    </div>    
-                </div>-->
-            </main>
+  <head>
+    <meta charset="utf-8" />
+    <title>Todo List</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="../src/style.css" />
+  </head>
+  <body>
+    <div class="content">
+      <header class="header">
+        <div class="logo">
+          <h1>To do list</h1>
         </div>
-    </body>
+        <div class="searchdiv">
+          <input
+            class="search"
+            autocomplete="off"
+            type="text"
+            placeholder=" Search"
+          />
+        </div>
+      </header>
+      <main class="main">
+        <aside class="sidebar">
+          <nav>
+            <ul>
+              <li class="list inbox">
+                <span class="inbox">
+                  <i class="fas fa-inbox"></i>
+                </span>
+                <span> &nbsp;Inbox </span>
+              </li>
+              <li class="list todaynote">
+                <span>
+                  <i class="fas fa-calendar-day"></i>
+                </span>
+                <span> &nbsp;Today </span>
+              </li>
+              <li class="list upcoming">
+                <span>
+                  <i class="far fa-calendar-alt"></i>
+                </span>
+                <span> &nbsp;Upcoming </span>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+        <section class="things">
+          <div class="date">
+            <h1>
+              <span> Today </span>
+              <small class="today"></small>
+            </h1>
+          </div>
+          <div class="event">
+            <div class="todos"></div>
+            <div class="b1">
+              <button class="add">+</button>
+              <span class="text"> Add task </span>
+            </div>
+          </div>
+        </section>
+        <div class="popup">
+          <div class="popup-content">
+            <div class="close">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <form action="">
+              <textarea class="title" placeholder="title"></textarea>
+              <textarea class="notes" placeholder="notes"></textarea>
+              <input class="dateInput" type="date" />
+              <input class="submit" type="button" value="add task" />
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>
