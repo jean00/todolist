@@ -1,240 +1,239 @@
 @font-face {
-    font-family: "opificio_light_rounded";
-    src:  url("./fonts/opificio_light_rounded.ttf") format("truetype");
-  }
+  font-family: "opificio_light_rounded";
+  src: url("./fonts/opificio_light_rounded.ttf") format("truetype");
+}
 
 body {
-    height: 100%;
-    margin: 0;
-    width: 100%;
+  height: 100%;
+  margin: 0;
+  width: 100%;
 }
 .header {
-    display: flex;
-    background-color: #6032a8;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  background-color: #6032a8;
+  align-items: center;
+  gap: 20px;
 }
 
 .logo {
-    font-family: 'opificio_light_rounded';
-    color: #ffff;
-    margin-left: 20px;
+  font-family: "opificio_light_rounded";
+  color: #ffff;
+  margin-left: 20px;
 }
 
 .search {
-    margin-top: 5px;
-    width: 400px;
-    height: 30px;
-    border-radius: 5px;
-    border-style: solid;
-    border-color: black;
-    color: #ffff;
-    background-color: #5032a8;
+  margin-top: 5px;
+  width: 400px;
+  height: 30px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: black;
+  color: #ffff;
+  background-color: #5032a8;
 }
 
 .sidebar {
-    padding-top: 30px;
-    padding-right: 40px;
-    background-color: #ededed;
-    width: 250px;
-    max-width: 300px;
-    height: 86vh;
-    float: left;
+  padding-top: 30px;
+  padding-right: 40px;
+  background-color: #ededed;
+  width: 250px;
+  max-width: 300px;
+  height: 86vh;
+  float: left;
 }
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 .list {
-    cursor: pointer;
-    background-color: #ededed;
-    transition: 0.5s;
-    font-size: 20px;
-    padding: 20px;
+  cursor: pointer;
+  background-color: #ededed;
+  transition: 0.5s;
+  font-size: 20px;
+  padding: 20px;
 }
 
-.list:hover{
-    opacity: 1;
-    background-color: #d4d4d4;
+.list:hover {
+  opacity: 1;
+  background-color: #d4d4d4;
 }
 
 .today {
-    font-weight: normal;
-    font-size: 15px;
-    font-style: oblique;   
-    color: #808080; 
+  font-weight: normal;
+  font-size: 15px;
+  font-style: oblique;
+  color: #808080;
 }
 
 .things {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .add {
-    border-radius: 100%;
-    border: none;
+  border-radius: 100%;
+  border: none;
 }
 
 .b1 {
-    cursor: pointer;
-    vertical-align: middle;
-    width: 900px;
-    font-size: 20px;
+  cursor: pointer;
+  vertical-align: middle;
+  width: 900px;
+  font-size: 20px;
 }
 
 .text {
-    width: 900px;
+  width: 900px;
 }
 
 .popup {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
 }
 
-
 .modifypopup {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .popup-content,
 .modifypopup-content {
-    width: 500px;
-    height: 420px;
-    background-color: #6032a8;
-    border-radius: 20px;
-    text-align: center;
-    position: relative;
-    margin-bottom: 20%;
+  width: 500px;
+  height: 420px;
+  background-color: #6032a8;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20%;
 }
 
 .title,
 .newTitle {
-    margin-top: 40px;
-    height: 30px;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 25px;
+  margin-top: 40px;
+  height: 30px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 25px;
 }
 .notes,
 .newNotes {
-    height: 150px;
-    padding: 10px;
-    font-size: 15px;
-    margin-bottom: 30px;
+  height: 150px;
+  padding: 10px;
+  font-size: 15px;
+  margin-bottom: 30px;
 }
 textarea {
-    resize: none;
-    border-radius:20px;
-    border: none;
-    background-color: #5032a8;
-    width: 90%;
-    margin: 10px; 
-    color: #ffff;
+  resize: none;
+  border-radius: 20px;
+  border: none;
+  background-color: #5032a8;
+  width: 90%;
+  margin: 10px;
+  color: #ffff;
 }
 
 .dateInput {
-    margin: auto;
-    border-radius:20px;
-    border: none;
-    background-color: #5032a1;
-    color: #ffff;
-    display: block;
-    height: 30px;
-    width: 120px;
+  margin: auto;
+  border-radius: 20px;
+  border: none;
+  background-color: #5032a1;
+  color: #ffff;
+  display: block;
+  height: 30px;
+  width: 120px;
 }
 
 textarea:hover,
 .dateInput:hover {
-    background-color: black ;
-    opacity: 0.5;
+  background-color: black;
+  opacity: 0.5;
 }
 
 textarea:focus {
-    background-color: black ;
-    opacity: 0.5;
+  background-color: black;
+  opacity: 0.5;
 }
 
 .close,
 .close2 {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    margin-top: 4px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  margin-top: 4px;
 }
 
 .submit,
 .submit2 {
-    margin-top: 30px;
-    height: 50px;
-    width: 100%;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border: none;
-    background-color: #5032a8;
-    font-weight: bolder;
+  margin-top: 30px;
+  height: 50px;
+  width: 100%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: none;
+  background-color: #5032a8;
+  font-weight: bolder;
 }
 
 .submit:hover,
 .submit2:hover {
-    opacity: 0.4;
-    color: white;
+  opacity: 0.4;
+  color: white;
 }
 .topdiv {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 15%;
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 15%;
+  margin-bottom: 15px;
 }
 
 .maindiv {
-    max-width: 900px;
-    word-wrap: break-word;
-    margin-bottom: 30px;
+  max-width: 900px;
+  word-wrap: break-word;
+  margin-bottom: 30px;
 }
 
 .divtitle {
-    font-size: 25px;
-    font-weight: bolder;
-    width: 200px;
+  font-size: 25px;
+  font-weight: bolder;
+  width: 200px;
 }
 
 .divdate {
-    padding-top: 5px;
-    font-size: 20px;
+  padding-top: 5px;
+  font-size: 20px;
 }
 
 .div {
-    display: flex;
-    gap: 20px;
-    padding-top: 10px;
-    opacity: 0;
+  display: flex;
+  gap: 20px;
+  padding-top: 10px;
+  opacity: 0;
 }
 
 .modify:hover {
-    color: red;
+  color: red;
 }
 
 .remove:hover {
-    color: red;
+  color: red;
 }
 
 .maindiv:hover .div {
-    opacity: 1;
-    cursor: pointer;
+  opacity: 1;
+  cursor: pointer;
 }
