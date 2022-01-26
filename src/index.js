@@ -28,7 +28,6 @@ document.querySelector(".submit").addEventListener("click", () => {
   note.getInput();
 });
 
-document.querySelector(".todaynote").addEventListener("click", () => {
-  console.log("ciao");
-  note.today(formattedDate);
+document.querySelector(".search").addEventListener("keyup", (e) => {
+  note.search(e);
 });

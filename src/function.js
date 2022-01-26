@@ -13,7 +13,9 @@ const notes = () => {
       title: document.querySelector(".title").value,
       description: document.querySelector(".notes").value,
       date: format(prova, "dd/MM/yyyy"),
+      done: "",
     };
+    console.log(obj);
     collection.push(obj);
     ui.HTMLelement(obj, i);
     i = i + 1;
@@ -40,14 +42,46 @@ const notes = () => {
     }
   };
 
-  /*const today = (todayDate) => {
-    console.log(collection);
-    const prova = collection.filter(
-      (collection) => collection.date === todayDate
-    );
-    ui.filter(maindiv);
-  };*/
-  return { getInput, removeEl, modify };
+  const check = (obj, checked) => {
+    if (checked.checked == true) {
+      obj.done = "done";
+      console.log(obj);
+    } else {
+      obj.done = "";
+      console.log(obj);
+    }
+  };
+
+  const search = (e) => {
+    console.log(e.target.value);
+    const filteredtodos = e.target.value;
+
+    displaytodo(filteredtodos);
+  };
+
+  const displaytodo = (filteredtodos) => {
+    let maindiv = document.querySelectorAll(".maindiv");
+    let titles = document.querySelectorAll(".divtitle");
+
+    for (let i = 0; i < maindiv.length; i++) {
+      console.log(maindiv[i], titles[i].textContent);
+      console.log(titles[i].textContent, filteredtodos);
+      if (titles[i].textContent !== filteredtodos) {
+        maindiv[i].style.display = "none";
+      } else {
+        if (titles[i].textContent === filteredtodos)
+          maindiv[i].style.display = "block";
+      }
+      if (filteredtodos.length === 0) {
+        for (let j = 0; j < maindiv.length; j++) {
+          maindiv[i].style.display = "block";
+        }
+      }
+      console.log(typeof titles[i].textContent, typeof filteredtodos);
+    }
+  };
+
+  return { getInput, removeEl, modify, check, search };
 };
 
 const note = notes();

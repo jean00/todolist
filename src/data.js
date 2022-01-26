@@ -10,10 +10,18 @@ const notes = () => {
     const divnotes = document.createElement("div");
     const divdate = document.createElement("div");
     const div = document.createElement("div");
+    const innerdiv = document.createElement("div");
     const divsetting = document.createElement("span");
     const divremove = document.createElement("span");
     const datavalue = document.createAttribute("data-value");
+    const checked = document.createElement("input");
+    const divcheck = document.createElement("span");
+
     datavalue.value = i;
+
+    checked.type = "checkbox";
+    checked.style.display = "inline";
+    checked.value = "done";
 
     topdiv.className = "topdiv";
     maindiv.className = "maindiv";
@@ -22,18 +30,25 @@ const notes = () => {
     div.className = "div";
     divsetting.className = "modify";
     divremove.className = "remove";
+    innerdiv.className = "innerdiv";
+    divcheck.className = "checkdiv";
+    divnotes.className = "divnotes";
+    checked.className = "checked";
 
     divtitle.textContent = obj.title;
     divdate.textContent = obj.date;
     divnotes.textContent = obj.description;
-    divsetting.innerHTML = '<i class="fas fa-cog"></i>';
-    divremove.innerHTML = '<i class="fas fa-trash"></i>';
+    divsetting.innerHTML = "<i class='fas fa-cog'></i>";
+    divremove.innerHTML = "<i class='fas fa-trash'></i>";
 
-    topdiv.appendChild(divtitle);
-    topdiv.appendChild(divdate);
+    topdiv.appendChild(divcheck);
+    divcheck.appendChild(checked);
+    innerdiv.appendChild(divtitle);
+    innerdiv.appendChild(divdate);
+    topdiv.appendChild(innerdiv);
     div.appendChild(divsetting);
     div.appendChild(divremove);
-    topdiv.appendChild(div);
+    innerdiv.appendChild(div);
     maindiv.appendChild(topdiv);
     maindiv.appendChild(divnotes);
     parentdiv.appendChild(maindiv);
@@ -45,7 +60,11 @@ const notes = () => {
     });
 
     divsetting.addEventListener("click", () => {
-      modifynote(obj, topdiv, divnotes);
+      modifynote(obj, innerdiv, divnotes);
+    });
+
+    checked.addEventListener("click", () => {
+      note.check(obj, checked);
     });
   };
 
@@ -54,7 +73,7 @@ const notes = () => {
     note.removeEl(datavalue);
   };
 
-  const modifynote = (obj, topdiv, divnotes) => {
+  const modifynote = (obj, innerdiv, divnotes) => {
     const main = document.querySelector(".main");
     const container = document.createElement("div");
     const maindiv = document.createElement("div");
@@ -80,22 +99,27 @@ const notes = () => {
 
     button.value = "modify";
 
+    closediv.innerHTML = "<i class='far fa-times-circle'></i>";
+
+    maindiv.appendChild(closediv);
     form.appendChild(titleta);
     form.appendChild(notesta);
     form.appendChild(date);
     form.appendChild(button);
     maindiv.appendChild(form);
-    maindiv.appendChild(closediv);
     container.appendChild(maindiv);
     main.appendChild(container);
 
+    closediv.addEventListener("click", () => {
+      document.querySelector(".modifypopup").style.display = "none";
+    });
+
     button.addEventListener("click", () => {
       container.style.display = "none";
-      const array2 = topdiv.childNodes;
+      const array2 = innerdiv.childNodes;
       note.modify(obj, array2, notesta, titleta, date, divnotes);
     });
   };
-
   return { HTMLelement };
 };
 const ui = notes();
