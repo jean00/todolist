@@ -55,7 +55,15 @@ const saveTodos = () => {
     localStorage.setItem("todos", JSON.stringify(copy2));
   };
 
-  return { storeItems, getItems, removeItem, modifyItem, getOldTitle, getOldDesc, getOldDate };
+  return {
+    storeItems,
+    getItems,
+    removeItem,
+    modifyItem,
+    getOldTitle,
+    getOldDesc,
+    getOldDate,
+  };
 };
 
 const storage = saveTodos();
