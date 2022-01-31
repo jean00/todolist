@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <title>Todo List</title>
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="../src/style.css" />
@@ -17,7 +17,7 @@
             class="search"
             autocomplete="off"
             type="text"
-            placeholder=" Search"
+            placeholder=" Search by title"
           />
         </div>
       </header>
@@ -42,10 +42,18 @@
             <div class="close">
               <i class="far fa-times-circle"></i>
             </div>
-            <form action="">
-              <textarea class="title" placeholder="title"></textarea>
-              <textarea class="notes" placeholder="notes"></textarea>
-              <input class="dateInput" type="date" />
+            <form>
+              <textarea
+                class="title"
+                autocomplete="off"
+                placeholder="title"
+              ></textarea>
+              <textarea
+                class="notes"
+                autocomplete="off"
+                placeholder="notes"
+              ></textarea>
+              <input class="dateInput" type="date" required />
               <input class="submit" type="button" value="add task" />
             </form>
           </div>
