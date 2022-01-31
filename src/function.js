@@ -49,6 +49,9 @@ const notes = () => {
 
   const modify = (obj, array2, notesta, titleta, date, divnotes) => {
     let oldTitle = storage.getOldTitle(obj);
+    let oldDesc = storage.getOldDesc(obj);
+    let oldDate = storage.getOldDate(obj);
+
     if (titleta.value !== "") {
       obj.title = titleta.value;
       array2[0].textContent = titleta.value;
@@ -66,7 +69,7 @@ const notes = () => {
       array2[1].textContent = formattedDate;
     }
 
-    storage.modifyItem(obj, oldTitle);
+    storage.modifyItem(obj, oldTitle, oldDesc, oldDate);
   };
 
   const search = (e) => {

@@ -31,17 +31,31 @@ const saveTodos = () => {
     return obj.title;
   };
 
-  const modifyItem = (obj, oldTitle) => {
+  const getOldDesc = (obj) => {
+    return obj.description;
+  };
+
+  const getOldDate = (obj) => {
+    return obj.date;
+  };
+
+  const modifyItem = (obj, oldTitle, oldDesc, oldDate) => {
     let copy2 = getItems();
     for (let i = 0; i < copy2.length; i++) {
       if (copy2[i].title == oldTitle) {
         copy2[i].title = obj.title;
       }
+      if (copy2[i].description == oldDesc) {
+        copy2[i].description = obj.description;
+      }
+      if (copy2[i].date == oldDate) {
+        copy2[i].date = obj.date;
+      }
     }
     localStorage.setItem("todos", JSON.stringify(copy2));
   };
 
-  return { storeItems, getItems, removeItem, modifyItem, getOldTitle };
+  return { storeItems, getItems, removeItem, modifyItem, getOldTitle, getOldDesc, getOldDate };
 };
 
 const storage = saveTodos();
