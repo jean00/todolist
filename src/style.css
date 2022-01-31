@@ -123,6 +123,7 @@ textarea {
 }
 
 .dateInput {
+  text-align: right;
   margin: auto;
   border-radius: 20px;
   border: none;

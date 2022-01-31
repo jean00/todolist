@@ -53,10 +53,9 @@ const notes = () => {
     maindiv.appendChild(divnotes);
     parentdiv.appendChild(maindiv);
     maindiv.setAttributeNode(datavalue);
-    console.log(datavalue);
 
     divremove.addEventListener("click", () => {
-      removeNote(datavalue, maindiv);
+      removeNote(datavalue, maindiv, obj);
     });
 
     divsetting.addEventListener("click", () => {
@@ -64,13 +63,13 @@ const notes = () => {
     });
 
     checked.addEventListener("click", () => {
-      note.check(obj, checked);
+      removeNote(datavalue, maindiv);
     });
   };
 
-  const removeNote = (datavalue, maindiv) => {
+  const removeNote = (datavalue, maindiv, obj) => {
     maindiv.parentNode.removeChild(maindiv);
-    note.removeEl(datavalue);
+    note.removeEl(datavalue, obj);
   };
 
   const modifynote = (obj, innerdiv, divnotes) => {
@@ -111,7 +110,10 @@ const notes = () => {
     main.appendChild(container);
 
     closediv.addEventListener("click", () => {
-      document.querySelector(".modifypopup").style.display = "none";
+      let popup = document.querySelectorAll(".modifypopup");
+      for (let i = 0; i < popup.length; i++) {
+        popup[i].style.display = "none";
+      }
     });
 
     button.addEventListener("click", () => {

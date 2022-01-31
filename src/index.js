@@ -7,6 +7,8 @@ import "@fortawesome/fontawesome-free/js/brands";
 
 import { format } from "date-fns";
 import { note } from "../src/function.js";
+import { storage } from "../src/storage";
+import { ui } from "../src/data";
 
 const today = new Date();
 const formattedDate = format(today, "dd/MM/yyyy");
@@ -24,8 +26,7 @@ document.querySelector(".close").addEventListener("click", () => {
 });
 
 document.querySelector(".submit").addEventListener("click", () => {
-  document.querySelector(".popup").style.display = "none";
-  note.getInput();
+  note.checkTitle(document.querySelector(".title").value);
 });
 
 document.querySelector(".search").addEventListener("keyup", (e) => {
