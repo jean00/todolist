@@ -20,7 +20,7 @@ const saveTodos = () => {
   const removeItem = (obj) => {
     let copy = getItems();
     for (let i = 0; i < copy.length; i++) {
-      if (copy[i].title == obj.title) {
+      if (copy[i].title === obj.title) {
         copy.splice(copy.indexOf(copy[i]), 1);
       }
     }
@@ -42,14 +42,14 @@ const saveTodos = () => {
   const modifyItem = (obj, oldTitle, oldDesc, oldDate) => {
     let copy2 = getItems();
     for (let i = 0; i < copy2.length; i++) {
-      if (copy2[i].title == oldTitle) {
+      if (copy2[i].title === oldTitle) {
         copy2[i].title = obj.title;
-      }
-      if (copy2[i].description == oldDesc) {
-        copy2[i].description = obj.description;
-      }
-      if (copy2[i].date == oldDate) {
-        copy2[i].date = obj.date;
+        if (copy2[i].description === oldDesc) {
+          copy2[i].description = obj.description;
+        }
+        if (copy2[i].date === oldDate) {
+          copy2[i].date = obj.date;
+        }
       }
     }
     localStorage.setItem("todos", JSON.stringify(copy2));

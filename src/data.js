@@ -63,7 +63,7 @@ const notes = () => {
     });
 
     checked.addEventListener("click", () => {
-      removeNote(datavalue, maindiv);
+      removeNote(datavalue, maindiv, obj);
     });
   };
 

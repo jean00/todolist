@@ -22,11 +22,36 @@ const notes = () => {
     i = i - 1;
   };
 
-  const checkTitle = (title) => {
-    if (title != "") {
-      document.querySelector(".popup").style.display = "none";
-      getInput();
-    } else alert("You have to enter a title for your todo");
+  const checkTitle = (title, date, today) => {
+    if (collection.length === 0) {
+      if (title == "") {
+        alert("You have to enter a title for your todo.");
+        return;
+      }
+      if (date.setHours(0, 0, 0, 0) < today.setHours(0, 0, 0, 0)) {
+        alert("The date selected is not valid");
+        return;
+      }
+    } else {
+      for (let x = 0; x < collection.length; x++) {
+        if (collection[x].title === title) {
+          alert("You have already used this title for another todo.");
+          return;
+        } else {
+          if (title === "") {
+            alert("You have to enter a title for your todo.");
+            return;
+          } else {
+            if (date.setHours(0, 0, 0, 0) < today.setHours(0, 0, 0, 0)) {
+              alert("The date selected is not valid");
+              return;
+            }
+          }
+        }
+      }
+    }
+    document.querySelector(".popup").style.display = "none";
+    getInput();
   };
 
   const getInput = () => {
