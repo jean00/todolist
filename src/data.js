@@ -73,6 +73,8 @@ const notes = () => {
   };
 
   const modifynote = (obj, innerdiv, divnotes) => {
+    window.addEventListener("keydown", keyInput);
+
     const main = document.querySelector(".main");
     const container = document.createElement("div");
     const maindiv = document.createElement("div");
@@ -121,6 +123,14 @@ const notes = () => {
       const array2 = innerdiv.childNodes;
       note.modify(obj, array2, notesta, titleta, date, divnotes);
     });
+
+    function keyInput(e) {
+        if (e.key === "Enter") {
+          container.style.display = "none";
+          const array2 = innerdiv.childNodes;
+          note.modify(obj, array2, notesta, titleta, date, divnotes);
+        }
+    }
   };
   return { HTMLelement };
 };

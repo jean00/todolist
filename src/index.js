@@ -12,6 +12,8 @@ const today = new Date();
 const formattedDate = format(today, "dd/MM/yyyy");
 const divButton = document.querySelector(".b1");
 
+window.addEventListener("keydown", keyInput);
+
 document.querySelector(".today").textContent = formattedDate;
 document.querySelector(".dateInput").valueAsDate = today;
 
@@ -34,3 +36,15 @@ document.querySelector(".submit").addEventListener("click", () => {
 document.querySelector(".search").addEventListener("keyup", (e) => {
   note.search(e);
 });
+
+function keyInput(e) {
+  if (document.querySelector(".popup").style.display == "flex") {
+    if (e.key === "Enter") {
+      note.checkTitle(
+        document.querySelector(".title").value,
+        document.querySelector(".dateInput").valueAsDate,
+        today
+      );
+    }
+  }
+}
