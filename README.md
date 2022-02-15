@@ -5,4 +5,4 @@ A todolist built using HTML, CSS and JavaScript.
 
 Try It [here](https://jean00.github.io/todolist/)
 
-04/02/22: keyboard support added!
+localstorage functionality available.
